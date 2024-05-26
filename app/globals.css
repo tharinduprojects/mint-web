@@ -3,5 +3,15 @@
 @tailwind utilities;
 
 body {
-  background: #b5b5b5;
+  /* background: #b5b5b5; */
+}
+
+.ant-input {
+  border-radius: 50px;
+  border: none;
+  padding: 10px 20px;
+}
+
+.ant-form-item-label label {
+  color: #506A82 !important;
 }

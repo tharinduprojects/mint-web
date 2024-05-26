@@ -17,6 +17,8 @@ export default async function Home() {
   const focusData = data.data[0].attributes.Blocks[2]
   const workCtaData = data.data[0].attributes.Blocks[3]
   const tabInfoData = data.data[0].attributes.Blocks[4]
+  const workTogetherdata = data.data[0].attributes.Blocks[5]
+
   return (
     <main>
       <Hero data={heroData} />
@@ -24,6 +26,8 @@ export default async function Home() {
       <ImageWithAccordian data={focusData} />
       <CtaSection data={workCtaData} />
       <TabsWithInfo data={tabInfoData} />
+      <CtaSection data={workTogetherdata} />
+
       <br />
       <br />
       <br />

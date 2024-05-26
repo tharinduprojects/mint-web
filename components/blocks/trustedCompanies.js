@@ -7,7 +7,7 @@ const TrustedCompanies = ({ data: trustedData }) => {
   return (
     <div className="bg-bgLight py-20">
       <div className="container mx-auto">
-        <h2 className="text-center text-2xl mb-6">{trustedData.title}</h2>
+        <h2 className="text-center text-2xl font-semibold mb-8">{trustedData.title}</h2>
         <div className="flex justify-between">
           {
             trustedData.logo.data.map((logo) => (
