@@ -10,7 +10,7 @@ const CtaSection = ({ data: ctaData }) => {
       <img className="absolute w-full h-full top-0 left-0 object-cover" src={baseUrl + ctaData.backgroundImage.data.attributes.url} alt="" />
       <div className="container mx-auto relative">
         <div className="text-center">
-          <h2 className="text-5xl max-w-[600px] font-bold mx-auto text-white">{ctaData.heading}</h2>
+          <h2 className="text-5xl max-w-[600px] font-semibold mx-auto text-white leading-[1.4]">{ctaData.heading}</h2>
           <div className="mt-14">
             <Button cta={ctaData.buttonLink} />
           </div>

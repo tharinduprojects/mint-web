@@ -10,7 +10,7 @@ const NavBar = () => {
   }
 
   return (
-    <div className="bg-mintDark py-6">
+    <div className="bg-mintDark py-4">
       <div className="container mx-auto">
         <div className="flex justify-between">
           <div className="flex items-center gap-12">
@@ -24,7 +24,8 @@ const NavBar = () => {
               </ul>
             </div>
           </div>
-          <div>
+          <div className="flex gap-x-6 items-center">
+            <Link className="text-white" href="#">EN</Link>
             <Button cta={cta} />
           </div>
         </div>

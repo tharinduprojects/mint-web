@@ -34,12 +34,12 @@ const ImageWithAccordian = ({ data: accordianData }) => {
   return (
     <div className="bg-bgLight pt-8 pb-24">
       <div className="container mx-auto">
-        <div className="grid grid-cols-2 gap-x-">
+        <div className="grid grid-cols-2 gap-x-20">
           <div>
             <img src={baseUrl + accordianData.sectionImage.data.attributes.url} alt="" />
           </div>
           <div className="max-w-[580px]">
-            <h2 className="text-5xl font-semibold mb-5">{accordianData.sectionTitle}</h2>
+            <h2 className="text-5xl font-semibold mb-5 leading-[1.2]">{accordianData.sectionTitle}</h2>
             <p className="text-lg max-w-[400px] font-light">{accordianData.sectionDescription}</p>
             <div className="mt-10">
               <Collapse bordered={false} accordion defaultActiveKey={['1']} items={items} />

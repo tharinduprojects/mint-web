@@ -4,6 +4,7 @@
 
 body {
   /* background: #b5b5b5; */
+  color: #073353;
 }
 
 .ant-input {
@@ -14,4 +15,46 @@ body {
 
 .ant-form-item-label label {
   color: #506A82 !important;
+}
+
+.ant-tabs-nav::before {
+  display: none;
+}
+
+.custom-tab .ant-tabs-content {
+  position: static;
+}
+
+.custom-tab .ant-tabs-nav-list {
+  gap: 30px;
+}
+
+.best-place-caraousel {
+  box-shadow: 10px 10px 40px -4px #0733531A;
+}
+
+.best-place-caraousel .slick-arrow {
+  background: #fff;
+  padding: 32px;
+  color: #B6C7D6;
+  border-radius: 50px;
+  opacity: 1;
+  box-shadow: 10px 10px 50px 0px #19306157;
+
+}
+
+.best-place-caraousel .slick-next {
+  transform: translate(38px, -20px) !important;
+}
+
+.best-place-caraousel .slick-prev {
+  transform: translate(-40px, -20px) !important;
+}
+
+.best-place-caraousel .slick-next::after {
+  transform: rotate(135deg) translate(2px, -33px);
+}
+
+.best-place-caraousel .slick-prev::after {
+  transform: rotate(-45deg) translate(0px, 35px);
 }

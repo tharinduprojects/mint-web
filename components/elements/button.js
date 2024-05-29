@@ -11,7 +11,7 @@ const Button = ({ cta }) => {
       break;
 
     case 'lg':
-      btnSIze = 'px-6 py-4'
+      btnSIze = 'px-8 py-4'
       break;
 
     default:
@@ -19,7 +19,7 @@ const Button = ({ cta }) => {
   }
 
   return (
-    <Link href={cta.link} className={` ${btnSIze} text-sm bg-btnPrimary rounded-full text-white`}>
+    <Link href={cta.link} className={` ${btnSIze} text-sm bg-btnPrimary rounded-full text-white px-`}>
       {cta.title}
     </Link>
   );
