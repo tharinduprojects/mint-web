@@ -9,7 +9,7 @@ const BestPlacesCaraousel = ({ data: bestPlaceData }) => {
   // console.log('bestPlaceData', bestPlaceData);
   return (
     <div className="py-20 relative">
-      <Image fill className="w-full h-full object-cover" src={API_BASE_URL + bestPlaceData.backDrop?.data.attributes.url} alt="" />
+      <Image fill className="w-full h-full" src={API_BASE_URL + bestPlaceData.backDrop?.data.attributes.url} alt="" />
       <div className="container">
         <div className="mb-24 text-center">
           <h2 className="text-5xl font-semibold mb-5">{bestPlaceData?.heading}</h2>
