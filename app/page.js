@@ -10,6 +10,7 @@ import TabsWithInfo from "@/components/blocks/tabsWithInfo";
 import LeftImgAndInfo from "@/components/blocks/leftImgAndInfo";
 import BestPlacesCaraousel from "@/components/blocks/bestPlacesCaraousel";
 import ScheduleDemo from "@/components/blocks/sheduleDemo";
+import NewsletterSubscribe from "@/components/blocks/newsletterSubscribe";
 
 export default async function Home() {
   const data = await getData()
@@ -24,6 +25,7 @@ export default async function Home() {
   const transformData = data.data[0].attributes.Blocks[6]
   const bestPlaceData = data.data[0].attributes.Blocks[7]
   const sheduleDemoData = data.data[0].attributes.Blocks[8]
+  const newsLetterData = data.data[0].attributes.Blocks[9]
 
   return (
     <main>
@@ -36,6 +38,7 @@ export default async function Home() {
       <LeftImgAndInfo data={transformData} />
       <BestPlacesCaraousel data={bestPlaceData} />
       <ScheduleDemo data={sheduleDemoData} />
+      <NewsletterSubscribe data={newsLetterData} />
     </main>
   );
 }

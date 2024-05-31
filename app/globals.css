@@ -58,3 +58,7 @@ body {
 .best-place-caraousel .slick-prev::after {
   transform: rotate(-45deg) translate(0px, 35px);
 }
+
+.inline-form .ant-form-item {
+  margin-bottom: 0;
+}
