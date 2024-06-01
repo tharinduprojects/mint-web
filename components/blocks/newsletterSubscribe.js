@@ -8,8 +8,6 @@ import Button from "../elements/button";
 const NewsletterSubscribe = ({ data: newsletterData }) => {
   const [form] = Form.useForm();
 
-  console.log('newsletterData', newsletterData);
-
   return (
     <div className="py-[135px] relative">
       <Image fill className="w-full h-full absolute top-0 left-0 object-cover" src={API_BASE_URL + newsletterData.sectionBackdrop.data.attributes.url} alt="" />

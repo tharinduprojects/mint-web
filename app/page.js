@@ -13,7 +13,9 @@ import ScheduleDemo from "@/components/blocks/sheduleDemo";
 import NewsletterSubscribe from "@/components/blocks/newsletterSubscribe";
 
 export default async function Home() {
-  const data = await getData()
+  const homeUrl = 'http://localhost:1337/api/landing-pages/?populate[metaData][populate]=*&populate[Blocks][populate][cta][populate]=*&populate[Blocks][populate][buttonLink][populate]=*&populate[Blocks][populate][logo][populate]=*&populate[Blocks][populate][tabItem][populate]=*&populate[Blocks][populate][sectionImage][populate]=*&populate[Blocks][populate][accordianItem][populate]=*&populate[Blocks][populate][image][populate]=*&populate[Blocks][populate][backgroundImage][populate]=*&populate[Blocks][populate][backDrop][populate]=*&populate[Blocks][populate][leftMedia][populate]=*&populate[Blocks][populate][sliderItem][populate]=*&populate[Blocks][populate][demoForm][populate]=*&populate[Blocks][populate][sectionBackdrop][populate]=*&populate[Blocks][populate][formButton][populate]=*'
+
+  const data = await getData(homeUrl)
   // console.log('FE data', data);
 
   const heroData = data.data[0].attributes.Blocks[0]
