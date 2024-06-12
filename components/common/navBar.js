@@ -10,12 +10,12 @@ const NavBar = () => {
   }
 
   return (
-    <div className="bg-mintDark py-4">
+    <div className="bg-mintDark py-4 px-8">
       <div className="container mx-auto">
         <div className="flex justify-between">
           <div className="flex items-center gap-12">
             <img src="http://localhost:1337/uploads/Logo_63c267b672.svg" alt="" />
-            <div className="text-white">
+            <div className="text-white hidden md:block">
               <ul className="text-sm flex gap-8">
                 <li className="pt-1"><Link href="#">Features</Link></li>
                 <li className="pt-1"><Link href="#">We Are</Link></li>

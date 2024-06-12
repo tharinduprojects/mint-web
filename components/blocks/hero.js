@@ -17,13 +17,13 @@ const Hero = ({ data: heroData }) => {
 
 
   return (
-    <div className="bg-primaryHero py-20 relative">
-      <Image fill className="absolute right-0 bottom-0 opacity-50 object-contain" src={heroBackDrop} alt="" />
+    <div className="bg-primaryHero py-20 relative px-8 md:px-0">
+      <Image fill className="absolute hidden lg:block right-0 bottom-0 opacity-50 object-contain" src={heroBackDrop} alt="" />
       <div className="container mx-auto">
-        <div className="grid grid-cols-2">
+        <div className="grid md:grid-cols-2">
           <div className="flex flex-col justify-center relative">
             <div className="max-w-[500px] text-primaryHeroText">
-              <h1 className="text-6xl font-bold mb-5 leading-[1.2]">{heroTitle}</h1>
+              <h1 className="text-5xl lg:text-6xl font-bold mb-5 leading-[1.2]">{heroTitle}</h1>
               <span className="text-lg font-light italic">{heroAuthor}</span>
               <p className="text-xl font-light mt-10 mb-9">{heroDescription}</p>
               <Form
@@ -45,7 +45,7 @@ const Hero = ({ data: heroData }) => {
           </div>
           <div className="flex justify-end">
             {/* <img src={heroImage} alt="" className="max-w-[650px] relative" /> */}
-            <Image src={heroImage} width={650} height={500} style={{ objectFit: 'contain' }} className="max-w-[650px] relative" />
+            <Image src={heroImage} width={300} height={300} style={{ objectFit: 'contain', width: '100%' }} className="max-w-[650px] relative" />
           </div>
         </div>
 

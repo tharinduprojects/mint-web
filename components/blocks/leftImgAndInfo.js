@@ -6,14 +6,14 @@ const LeftImgAndInfo = ({ data: sectionData }) => {
   const baseUrl = process.env.BASE_URL || 'http://localhost:1337'
 
   return (
-    <div style={{ 'background': `${sectionData.bgColor}` }} className="py-9">
+    <div style={{ 'background': `${sectionData.bgColor}` }} className="py-9 px-8 md:px-0">
       <div className="container">
-        <div className="grid grid-cols-2 items-center">
+        <div className="flex flex-col md:flex-row items-center">
           <div>
             <img src={baseUrl + sectionData.leftMedia.data.attributes.url} alt="" />
           </div>
           <div className="py-4">
-            <h2 className="text-5xl font-semibold mb-8 max-w-[500px] leading-[1.2]">{sectionData.heading}</h2>
+            <h2 className="text-3xl md:text-5xl font-semibold mb-8 max-w-[500px] leading-[1.2]">{sectionData.heading}</h2>
             <p className="max-w-[580px] text-lg leading-[1.5] font-light">{sectionData.descripion}</p>
           </div>
         </div>

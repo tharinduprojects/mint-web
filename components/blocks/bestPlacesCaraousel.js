@@ -8,11 +8,11 @@ const BestPlacesCaraousel = ({ data: bestPlaceData }) => {
 
   // console.log('bestPlaceData', bestPlaceData);
   return (
-    <div className="py-20 relative">
-      <Image fill className="w-full h-full" src={API_BASE_URL + bestPlaceData.backDrop?.data.attributes.url} alt="" />
+    <div className="py-20 relative px-8 md:px-0">
+      <Image fill className="w-full h-full hidden md:block " src={API_BASE_URL + bestPlaceData.backDrop?.data.attributes.url} alt="" />
       <div className="container">
         <div className="mb-24 text-center">
-          <h2 className="text-5xl font-semibold mb-5">{bestPlaceData?.heading}</h2>
+          <h2 className="text-3xl md:text-5xl font-semibold mb-5">{bestPlaceData?.heading}</h2>
           <p className="text-lg font-light">{bestPlaceData.description}</p>
         </div>
         <div className="my-10 best-place-caraousel rounded-[20px]">
@@ -20,12 +20,12 @@ const BestPlacesCaraousel = ({ data: bestPlaceData }) => {
             {
               bestPlaceData.sliderItem?.map((item, i) => (
                 <div className=" rounded-[20px] overflow-hidden" key={i}>
-                  <div className="flex flex-row min-h-[410px] ">
+                  <div className="flex flex-col md:flex-row min-h-[410px] ">
                     <div className="basis-[40%]">
                       <img width={300} height={300} className="h-full w-full max-h-[410px] object-cover" src={API_BASE_URL + item.image?.data.attributes.url} alt="" />
                     </div>
-                    <div className="basis-[60%] px-[70px] py-14  bg-white flex flex-col justify-center items-baseline">
-                      <p className="text-lg font-light leading-[2.2]">{item.sliderDescription}</p>
+                    <div className="basis-[60%] px-7 md:px-[70px] py-14  bg-white flex flex-col justify-center items-baseline">
+                      <p className="text-base md:text-lg font-light leading-[2.2]">{item.sliderDescription}</p>
                       <div className="mt-10 flex">
                         <Image width={60} height={60} src={API_BASE_URL + item.clientImage.data.attributes.url} alt="" />
                         <div className="ml-5">

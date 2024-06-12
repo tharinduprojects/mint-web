@@ -18,9 +18,9 @@ const TabsWithInfo = ({ data: tabInfoData }) => {
         key: i + 1,
         label: <span className="flex gap-3 items-center"><img src={baseUrl + element.tabIcon.data.attributes.url} alt="" /> {element.contentHeading}</span>,
         children:
-          <div className="grid grid-cols-2 pt-20">
-            <div>
-              <h3 className="text-5xl font-bold mb-5">{element.contentHeading}</h3>
+          <div className="grid md:grid-cols-2 pt-20">
+            <div className="mb-8">
+              <h3 className="text-3xl md:text-5xl font-bold mb-5">{element.contentHeading}</h3>
               <p className="text-lg font-light max-w-[520px] mb-10">{element.contentDescription}</p>
               <ul>
                 {element.tabListFeatures.map((item, i) => (
@@ -32,7 +32,7 @@ const TabsWithInfo = ({ data: tabInfoData }) => {
               </div>
             </div>
             <div className="md:min-h-[620px]">
-              <img className="absolute right-0 " src={baseUrl + element.tabMediaImage.data.attributes.url} alt="" />
+              <img className="md:absolute right-0 " src={baseUrl + element.tabMediaImage.data.attributes.url} alt="" />
             </div>
           </div>
       }
@@ -48,7 +48,7 @@ const TabsWithInfo = ({ data: tabInfoData }) => {
   // console.log('tabInfoData', tabInfoData.tabItem);
 
   return (
-    <div className="container mx-auto pt-12 custom-tab">
+    <div className="container mx-auto pt-12 px-8 custom-tab">
       <Tabs defaultActiveKey="1" items={items} />
 
     </div>
