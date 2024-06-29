@@ -11,6 +11,7 @@ import LeftImgAndInfo from "@/components/blocks/leftImgAndInfo";
 import BestPlacesCaraousel from "@/components/blocks/bestPlacesCaraousel";
 import ScheduleDemo from "@/components/blocks/sheduleDemo";
 import NewsletterSubscribe from "@/components/blocks/newsletterSubscribe";
+import DemoWithNewsletter from "@/components/common/demoWithNewsletter";
 
 export default async function Home() {
   const homeUrl = 'http://localhost:1337/api/landing-pages/?populate[metaData][populate]=*&populate[Blocks][populate][cta][populate]=*&populate[Blocks][populate][buttonLink][populate]=*&populate[Blocks][populate][logo][populate]=*&populate[Blocks][populate][tabItem][populate]=*&populate[Blocks][populate][sectionImage][populate]=*&populate[Blocks][populate][accordianItem][populate]=*&populate[Blocks][populate][image][populate]=*&populate[Blocks][populate][backgroundImage][populate]=*&populate[Blocks][populate][backDrop][populate]=*&populate[Blocks][populate][leftMedia][populate]=*&populate[Blocks][populate][sliderItem][populate]=*&populate[Blocks][populate][demoForm][populate]=*&populate[Blocks][populate][sectionBackdrop][populate]=*&populate[Blocks][populate][formButton][populate]=*'
@@ -26,8 +27,6 @@ export default async function Home() {
   const workTogetherdata = data.data[0].attributes.Blocks[5]
   const transformData = data.data[0].attributes.Blocks[6]
   const bestPlaceData = data.data[0].attributes.Blocks[7]
-  const sheduleDemoData = data.data[0].attributes.Blocks[8]
-  const newsLetterData = data.data[0].attributes.Blocks[9]
 
   return (
     <main>
@@ -39,8 +38,7 @@ export default async function Home() {
       <CtaSection data={workTogetherdata} />
       <LeftImgAndInfo data={transformData} />
       <BestPlacesCaraousel data={bestPlaceData} />
-      <ScheduleDemo data={sheduleDemoData} />
-      <NewsletterSubscribe data={newsLetterData} />
+      <DemoWithNewsletter />
     </main>
   );
 }

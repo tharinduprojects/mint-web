@@ -5,8 +5,6 @@ import { API_BASE_URL } from "../utils/constants";
 
 const CenteredTextDescBgImg = ({ data: centeredData }) => {
 
-  console.log('datsssa', centeredData);
-
   return (
     <div className="px-8 py-10 relative min-h-[560px] flex flex-col justify-center items-center" style={{ 'background': `${centeredData.bgColor}` }}>
       <Image fill className="w-full h-full object-cover" src={API_BASE_URL + centeredData.backDrop.data.attributes.url} alt="" />
