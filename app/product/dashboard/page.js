@@ -5,18 +5,19 @@ import TeustedLogos from "@/components/common/trustedCompaniesLayout";
 
 const ProductDashboard = async () => {
 
-  const productDashboardUrl = 'http://localhost:1337/api/products/?populate[blocks][populate][0]=backDrop,image,cta'
+  const productDashboardUrl = 'http://localhost:1337/api/products/?populate[blocks][populate][0]=backDrop,image,cta,feature,media'
 
   const data = await getData(productDashboardUrl)
 
   const heroData = data.data[0].attributes.blocks[0]
+  const productS1 = data.data[0].attributes.blocks[1]
 
 
   return (
     <div>
       <Hero data={heroData} />
       <TeustedLogos />
-      <ProductItem />
+      <ProductItem data={productS1} />
     </div>
   );
 }

@@ -5,7 +5,6 @@ import { API_BASE_URL } from "../utils/constants";
 
 const TrustedCompanies = ({ data: trustedData }) => {
 
-  console.log('trustedData', trustedData);
   const baseUrl = process.env.BASE_URL
 
   return (
