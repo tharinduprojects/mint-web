@@ -6,7 +6,7 @@ import { API_BASE_URL } from "../utils/constants";
 
 const BestPlacesCaraousel = ({ data: bestPlaceData }) => {
 
-  // console.log('bestPlaceData', bestPlaceData);
+  console.log('bestPlaceData', bestPlaceData);
   return (
     <div className="py-20 relative px-8 md:px-0">
       <Image fill className="w-full h-full hidden md:block " src={API_BASE_URL + bestPlaceData.backDrop?.data.attributes.url} alt="" />
@@ -27,7 +27,7 @@ const BestPlacesCaraousel = ({ data: bestPlaceData }) => {
                     <div className="basis-[60%] px-7 md:px-[70px] py-14  bg-white flex flex-col justify-center items-baseline">
                       <p className="text-base md:text-lg font-light leading-[2.2]">{item.sliderDescription}</p>
                       <div className="mt-10 flex">
-                        <Image width={60} height={60} src={API_BASE_URL + item.clientImage.data.attributes.url} alt="" />
+                        <Image width={60} height={60} src={API_BASE_URL + item.clientImage?.data.attributes.url} alt="" />
                         <div className="ml-5">
                           <h3 className="text-lg font-medium">{item.clientName}</h3>
                           <p className="text-sm font-light text-[#B6C7D6]">{item.clientCompany}</p>

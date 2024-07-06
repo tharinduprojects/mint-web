@@ -16,7 +16,7 @@ const Hero = ({ data: heroData }) => {
   const heroBackDrop = API_BASE_URL + heroData.backDrop.data.attributes.url
 
   return (
-    <div className="bg-primaryHero py-20 relative px-8 md:px-0">
+    <div className=" py-20 relative px-8 md:px-0" style={{ 'background': `${heroData.bgColor}` }}>
       <Image fill className="absolute hidden lg:block right-0 bottom-0 object-contain object-right" src={heroBackDrop} alt="" />
       <div className="container mx-auto">
         <div className="grid md:grid-cols-2">
