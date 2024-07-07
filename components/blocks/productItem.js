@@ -9,10 +9,12 @@ const ProductItem = ({ data: productData }) => {
 
   console.log('productData', productData);
 
+
+
   return (
-    <div className="bg-bgLight py-5">
-      <div className="container">
-        <div className="md:flex  rounded-[20px] pt-10" style={{ 'background': `${productData.bgColor}; flex-direction: ${productData.leftMedia ? 'row-reverse' : 'row'}` }}>
+    <div className={` ${productData.isFullWidth ? `pt-5 bg-[${productData.bgColor}]` : 'bg-bgLight py-5'}`}>
+      <div className='container'>
+        <div className={`md:flex ${!productData.isFullWidth ? 'rounded-[20px] ' : ''} pt-10`} style={{ 'background': `${productData.bgColor}; flex-direction: ${productData.leftMedia ? 'row-reverse' : 'row'}` }}>
           <div className="basis-1/2 p-11">
             <h2 className="text-5xl font-semibold pb-5">{productData.title}</h2>
             <p className="text-lg font-light">{productData.description}</p>
