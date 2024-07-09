@@ -31,9 +31,11 @@ const ImageWithAccordian = ({ data: accordianData }) => {
 
   const items = mapAccordianData();
 
+  console.log('accordianData', accordianData);
+
   return (
-    <div className="bg-bgLight pt-8 pb-24 px-8">
-      <div className="container mx-auto">
+    <div className={`bg-bgLight pt-8  px-8 ${accordianData.isFullWidth ? 'pb-24' : 'pb-8'}`}>
+      <div className={` mx-auto ${!accordianData.isFullWidth ? 'container rounded-[20px] py-14' : ''}`} style={{ 'background': `${accordianData.bgColor}` }}>
         <div className="grid md:grid-cols-2 gap-x-20">
           <div>
             <img className=" hidden md:block" src={baseUrl + accordianData.sectionImage.data.attributes.url} alt="" />

@@ -6,7 +6,6 @@ import { API_BASE_URL } from "../utils/constants";
 
 const BestPlacesCaraousel = ({ data: bestPlaceData }) => {
 
-  console.log('bestPlaceData', bestPlaceData);
   return (
     <div className="py-20 relative px-8 md:px-0">
       <Image fill className="w-full h-full hidden md:block " src={API_BASE_URL + bestPlaceData.backDrop?.data.attributes.url} alt="" />

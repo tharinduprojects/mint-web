@@ -20,12 +20,14 @@ const ProductItem = ({ data: productData }) => {
             <p className="text-lg font-light">{productData.description}</p>
             <ul className="mt-10">
               {
-                productData.feature.map((item, i) => (
+                productData.feature?.map((item, i) => (
                   <li key={item.id} className="mb-6"><span className="mr-3 text-green-500 font-light"><CheckCircleFilled /></span>{item.listItem}</li>
                 ))
               }
             </ul>
-            <Button className="mt-10 inline-block" cta={productData.cta} />
+            {
+              productData.cta?.title && <Button className="mt-10 inline-block" cta={productData.cta} />
+            }
           </div>
           <div className="basis-1/2 flex" style={{ justifyContent: !productData.leftMedia ? 'flex-end' : '' }}>
 
