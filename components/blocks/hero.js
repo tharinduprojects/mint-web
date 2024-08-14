@@ -8,12 +8,12 @@ import { API_BASE_URL } from "../utils/constants";
 const Hero = ({ data: heroData }) => {
   const [form] = Form.useForm();
   const baseUrl = process.env.BASE_URL
-  const heroImage = API_BASE_URL + heroData.image.data.attributes.url
+  const heroImage = heroData.image.data.attributes.url
   const heroTitle = heroData.heading
   const heroDescription = heroData.description
   const heroButton = heroData.cta
   const heroAuthor = heroData.author
-  const heroBackDrop = API_BASE_URL + heroData.backDrop.data.attributes.url
+  const heroBackDrop = heroData.backDrop.data.attributes.url
 
   return (
     <div className=" py-20 relative px-8 md:px-0" style={{ 'background': `${heroData.bgColor}` }}>

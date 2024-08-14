@@ -3,7 +3,7 @@ import TrustedCompanies from "../blocks/trustedCompanies";
 
 const TeustedLogos = async () => {
 
-  const trustedCompUrl = 'http://localhost:1337/api/trusted-common-logo?populate[trustedCompanies][populate]=*'
+  const trustedCompUrl = 'https://joyful-egg-6af1fd8511.strapiapp.com/api/trusted-common-logo?populate[trustedCompanies][populate]=*'
 
   const data = await getData(trustedCompUrl)
 

@@ -19,7 +19,7 @@ const ScheduleDemo = ({ data: sheduleDemoData }) => {
             <p>{sheduleDemoData.description}</p>
           </div>
           <div className="flex-[1.3] flex justify-end relative">
-            <Image width={500} height={500} className="hidden md:block object-contain absolute w-full left-[90px] bottom-[-6px]" src={API_BASE_URL + sheduleDemoData.demoForm[0].formBackDrop.data[0].attributes.url} alt="" />
+            <Image width={500} height={500} className="hidden md:block object-contain absolute w-full left-[90px] bottom-[-6px]" src={sheduleDemoData.demoForm[0].formBackDrop.data[0].attributes.url} alt="" />
             <div className="bg-[#073353] md:py-14 md:px-12 p-8 max-w-[520px] flex-1 rounded-xl relative">
               <h3 className="text-white text-2xl md:text-3xl font-medium mb-5">{sheduleDemoData.demoForm[0].formTitle}</h3>
               <p className="text-white text-sm md:text-base font-light mb-10">{sheduleDemoData.demoForm[0].formDescription}</p>

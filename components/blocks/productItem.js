@@ -31,7 +31,7 @@ const ProductItem = ({ data: productData }) => {
           </div>
           <div className="basis-1/2 flex" style={{ justifyContent: !productData.leftMedia ? 'flex-end' : '' }}>
 
-            <Image src={API_BASE_URL + productData.media.data.attributes.url} alt="product" width={500} height={500} />
+            {/* <Image src={API_BASE_URL + productData.media.data.attributes.url} alt="product" width={500} height={500} /> */}
           </div>
         </div>
       </div>

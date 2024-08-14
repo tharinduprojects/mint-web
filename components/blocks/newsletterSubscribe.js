@@ -10,7 +10,7 @@ const NewsletterSubscribe = ({ data: newsletterData }) => {
 
   return (
     <div className="py-[135px] relative px-8">
-      <Image fill className="w-full h-full absolute top-0 left-0 object-cover" src={API_BASE_URL + newsletterData.sectionBackdrop.data.attributes.url} alt="" />
+      <Image fill className="w-full h-full absolute top-0 left-0 object-cover" src={newsletterData.sectionBackdrop.data.attributes.url} alt="" />
       <div className="container text-center relative text-white">
         <h2 className="text-3xl md:text-5xl font-semibold mb-5">{newsletterData.heading}</h2>
         <p className="max-w-[675px] mx-auto text-base md:text-lg mb-16 font-light">{newsletterData.description}</p>

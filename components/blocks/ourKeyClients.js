@@ -16,8 +16,8 @@ const OurKeyClients = ({ data: keyClientData }) => {
         <p className="text-lg font-light text-center grid-col max-w-[645px] mx-auto">{keyClientData.description}</p>
         <div className={`py-10 mt-20 ${gridClass}`}>
           {
-            keyClientData.logos.data?.map((item, i) => (
-              <img key={i} className={imgClass} src={API_BASE_URL + item.attributes.url} alt="" />
+            keyClientData.logos?.data?.map((item, i) => (
+              <img key={i} className={imgClass} src={item.attributes.url} alt="" />
             ))
           }
         </div>

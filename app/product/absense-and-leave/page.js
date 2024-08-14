@@ -7,7 +7,7 @@ import TeustedLogos from "@/components/common/trustedCompaniesLayout";
 
 const ProductAbsenceAndLeave = async () => {
 
-  const ProductAbsenceAndLeave = 'http://localhost:1337/api/products/?populate[blocks][populate][0]=backDrop,image,cta,feature,media'
+  const ProductAbsenceAndLeave = 'https://joyful-egg-6af1fd8511.strapiapp.com/api/products/?populate[blocks][populate][0]=backDrop,image,cta,feature,media'
 
   const data = await getData(ProductAbsenceAndLeave)
 

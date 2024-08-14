@@ -50,17 +50,17 @@ const ImageWithAccordian = ({ data: accordianData }) => {
   const imgStyles = parseCssString(accordianData.mediaCss);
 
   return (
-    <div className={`bg-bgLight pt-8  px-8 ${accordianData.isFullWidth ? 'pb-24' : 'pb-8'}`} style={{ 'background': `${!accordianData.isFullWidth ? 'transparent' : accordianData.bgColor}` }}>
+    <div className={`bg-bgLight pt-8  px-8 ${accordianData.isFullWidth ? 'pb-24' : 'pb-8'}`} style={{ 'background': `${!accordianData.isFullWidth ? '' : accordianData.bgColor}` }}>
       <div className={` mx-auto ${!accordianData.isFullWidth ? 'container rounded-[20px] py-14' : ''}`} style={{ 'background': `${accordianData.isFullWidth ? 'transparent' : accordianData.bgColor}` }}>
         <div className={`md:flex  gap-x-20 `} style={{ 'flexDirection': accordianData.isRightMedia ? 'row-reverse' : 'row' }}>
           <div className="basis-1/2 relative">
-            <img className=" hidden md:block" style={imgStyles} src={baseUrl + accordianData.sectionImage.data.attributes.url} alt="" />
-            <img src={baseUrl + accordianData.backDrop?.data?.attributes.url} alt="" className="absolute" />
+            <img className=" hidden md:block" style={imgStyles} src={accordianData.sectionImage.data.attributes.url} alt="" />
+            <img src={accordianData.backDrop?.data?.attributes.url} alt="" className="absolute" />
           </div>
           <div className="max-w-[580px]" style={accordianData.isRightMedia ? { paddingLeft: '50px' } : { paddingRight: '50px' }}>
             <h2 className="text-3xl md:text-5xl  font-semibold mb-5 leading-[1.2]" style={{ 'color': `${accordianData.textColor && accordianData.textColor}` }}>{accordianData.sectionTitle}</h2>
             <p className="text-lg max-w-[400px] font-light" style={{ 'color': `${accordianData.textColor && accordianData.textColor}` }}>{accordianData.sectionDescription}</p>
-            <img className="block md:hidden my-5" src={baseUrl + accordianData.sectionImage.data.attributes.url} alt="" />
+            <img className="block md:hidden my-5" src={accordianData.sectionImage.data.attributes.url} alt="" />
             <div className="mt-10">
               <Collapse bordered={false} accordion defaultActiveKey={['1']} items={items} />
             </div>

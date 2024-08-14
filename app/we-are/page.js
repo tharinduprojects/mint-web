@@ -7,7 +7,7 @@ import DemoWithNewsletter from "@/components/common/demoWithNewsletter";
 
 const WeAre = async () => {
 
-  const weAreUrl = 'http://localhost:1337/api/we-ares/?populate[Blocks][populate][0]=backDrop&populate[Blocks][populate][1]=bgImage&populate[Blocks][populate][2]=logos&populate[Blocks][populate][3]=mintNumbers'
+  const weAreUrl = 'https://joyful-egg-6af1fd8511.strapiapp.com/api/we-ares/?populate[Blocks][populate][0]=backDrop&populate[Blocks][populate][1]=bgImage&populate[Blocks][populate][2]=logos&populate[Blocks][populate][3]=mintNumbers'
 
   const data = await getData(weAreUrl)
 
@@ -19,17 +19,16 @@ const WeAre = async () => {
   const ourAchivementsData = data.data[0].attributes.Blocks[6]
   const mintHrmNumbersData = data.data[0].attributes.Blocks[8]
 
-
   return (
     <div>
       <HeroWeAre data={heroWeAreData} />
-      <CenteredTextDescBgImg data={centeredData} />
+      {/* <CenteredTextDescBgImg data={centeredData} /> */}
       <MintHrmNumbers data={mintHrmNumbersData} />
       <OurKeyClients data={keyClientData} />
       <OurKeyClients data={ourResellersData} />
       <OurKeyClients data={ourPartnerData} />
       <OurKeyClients data={ourAchivementsData} />
-      <DemoWithNewsletter />
+      {/* <DemoWithNewsletter /> */}
     </div>
   );
 }

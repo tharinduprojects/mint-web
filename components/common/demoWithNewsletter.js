@@ -4,7 +4,7 @@ import ScheduleDemo from "../blocks/sheduleDemo";
 
 const DemoWithNewsletter = async () => {
 
-  const blockData = 'http://localhost:1337/api/demo-and-newsletter?populate[demo][populate][demoForm][populate]=formButton&populate[demo][populate][demoForm][populate]=formBackDrop&populate[newsLetter][populate]=formButton,sectionBackdrop'
+  const blockData = 'https://joyful-egg-6af1fd8511.strapiapp.com/api/demo-and-newsletter?populate[demo][populate][demoForm][populate]=formButton&populate[demo][populate][demoForm][populate]=formBackDrop&populate[newsLetter][populate]=formButton,sectionBackdrop'
 
   const data = await getData(blockData)
 
