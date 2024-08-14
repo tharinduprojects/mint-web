@@ -16,10 +16,10 @@ const ProductItemCentered = ({ data: productData }) => {
             productData.cta && <Button className="mt-10 inline-block" cta={productData.cta} />
           }
           {
-            productData.media.data && <Image quality={100} src={API_BASE_URL + productData.media.data.attributes.url} className="mt-24 relative z-10" alt="product" width={500} height={500} style={{ 'width': '100%', 'objectFit': 'contain' }} />
+            productData.media.data && <Image quality={100} src={productData.media.data.attributes.url} className="mt-24 relative z-10" alt="product" width={500} height={500} style={{ 'width': '100%', 'objectFit': 'contain' }} />
           }
           {
-            productData.backdrop?.data && <Image quality={100} src={API_BASE_URL + productData.backdrop?.data?.attributes.url} className="mt-24 " alt="product" width={500} height={500} style={{ 'width': '100%', 'objectFit': 'contain', 'position': 'absolute', 'bottom': '0' }} />
+            productData.backdrop?.data && <Image quality={100} src={productData.backdrop?.data?.attributes.url} className="mt-24 " alt="product" width={500} height={500} style={{ 'width': '100%', 'objectFit': 'contain', 'position': 'absolute', 'bottom': '0' }} />
           }
 
         </div>

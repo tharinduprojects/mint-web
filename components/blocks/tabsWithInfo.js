@@ -8,7 +8,7 @@ import { useEffect } from "react";
 
 const TabsWithInfo = ({ data: tabInfoData }) => {
 
-  const baseUrl = process.env.BASE_URL || 'http://localhost:1337'
+  // const baseUrl = process.env.BASE_URL || 'http://localhost:1337'
 
   const mapTabData = () => {
     const items = [];
@@ -16,7 +16,7 @@ const TabsWithInfo = ({ data: tabInfoData }) => {
     tabInfoData.tabItem.forEach((element, i) => {
       const dataItem = {
         key: i + 1,
-        label: <span className="flex gap-3 items-center"><img src={baseUrl + element.tabIcon.data.attributes.url} alt="" /> {element.contentHeading}</span>,
+        label: <span className="flex gap-3 items-center"><img src={element.tabIcon.data.attributes.url} alt="" /> {element.contentHeading}</span>,
         children:
           <div className="grid md:grid-cols-2 pt-20">
             <div className="mb-8">
@@ -32,7 +32,7 @@ const TabsWithInfo = ({ data: tabInfoData }) => {
               </div>
             </div>
             <div className="md:min-h-[620px]">
-              <img className="md:absolute right-0 " src={baseUrl + element.tabMediaImage.data.attributes.url} alt="" />
+              <img className="md:absolute right-0 " src={element.tabMediaImage.data.attributes.url} alt="" />
             </div>
           </div>
       }

@@ -7,6 +7,7 @@ const nextConfig = {
         port: '1337',
       }
     ],
+    domains: ['joyful-egg-6af1fd8511.media.strapiapp.com'],
   },
 };
 

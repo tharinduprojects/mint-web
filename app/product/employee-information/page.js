@@ -8,7 +8,7 @@ import TeustedLogos from "@/components/common/trustedCompaniesLayout";
 
 const EmployeeInformation = async () => {
 
-  const productDashboardUrl = 'http://localhost:1337/api/products/?populate[blocks][populate][0]=backDrop,image,cta,feature,media,sectionImage,accordianItem'
+  const productDashboardUrl = 'https://joyful-egg-6af1fd8511.strapiapp.com/api/products/?populate[blocks][populate][0]=backDrop,image,cta,feature,media,sectionImage,accordianItem'
 
   const data = await getData(productDashboardUrl)
 

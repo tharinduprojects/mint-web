@@ -3,14 +3,14 @@
 const LeftImgAndInfo = ({ data: sectionData }) => {
 
   // console.log('section data', sectionData);
-  const baseUrl = process.env.BASE_URL || 'http://localhost:1337'
+  // const baseUrl = process.env.BASE_URL || 'http://localhost:1337'
 
   return (
     <div style={{ 'background': `${sectionData.bgColor}` }} className="py-9 px-8 md:px-0">
       <div className="container">
         <div className="flex flex-col md:flex-row items-center">
           <div>
-            <img src={baseUrl + sectionData.leftMedia.data.attributes.url} alt="" />
+            <img src={sectionData.leftMedia.data.attributes.url} alt="" />
           </div>
           <div className="py-4">
             <h2 className="text-3xl md:text-5xl font-semibold mb-8 max-w-[500px] leading-[1.2]">{sectionData.heading}</h2>

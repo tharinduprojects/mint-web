@@ -8,7 +8,7 @@ import TeustedLogos from "@/components/common/trustedCompaniesLayout";
 
 const Kanbanboard = async () => {
 
-  const recruitmentData = 'http://localhost:1337/api/products/?populate[blocks][populate][0]=backDrop,image,cta,feature,media,sectionImage,accordianItem,backdrop'
+  const recruitmentData = 'https://joyful-egg-6af1fd8511.strapiapp.com/api/products/?populate[blocks][populate][0]=backDrop,image,cta,feature,media,sectionImage,accordianItem,backdrop'
 
   const data = await getData(recruitmentData)
 

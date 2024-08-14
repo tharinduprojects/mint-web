@@ -10,7 +10,7 @@ const FooterLayot = ({ data: footerData }) => {
       <div className="container">
         <div className="md:flex">
           <div className="basis-1/2 mb-16">
-            <Image width={172} height={35} className=" object-contain" src={API_BASE_URL + footerData.data.attributes.mintFooter.footerLogo.data.attributes.url} alt="" />
+            <Image width={172} height={35} className=" object-contain" src={footerData.data.attributes.mintFooter.footerLogo.data.attributes.url} alt="" />
             <p className="text-sm font-normal mt-5">{footerData.data.attributes.mintFooter.footerDescription}</p>
           </div>
           <div className="basis-1/2">
@@ -39,7 +39,7 @@ const FooterLayot = ({ data: footerData }) => {
             <ul className="list-none flex gap-3">
               {
                 footerData.data.attributes.mintFooter.socialMedia.map((item, i) => (
-                  <li><Image width={20} height={20} src={API_BASE_URL + item.iconImage.data.attributes.url} alt="" /> </li>
+                  <li><Image width={20} height={20} src={item.iconImage.data.attributes.url} alt="" /> </li>
                 ))
               }
             </ul>

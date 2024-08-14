@@ -7,7 +7,7 @@ import TeustedLogos from "@/components/common/trustedCompaniesLayout";
 
 const ProductPayroll = async () => {
 
-  const ProductPayroll = 'http://localhost:1337/api/products/?populate[blocks][populate][0]=backDrop,image,cta,feature,media'
+  const ProductPayroll = 'https://joyful-egg-6af1fd8511.strapiapp.com/api/products/?populate[blocks][populate][0]=backDrop,image,cta,feature,media'
 
   const data = await getData(ProductPayroll)
 
@@ -22,9 +22,9 @@ const ProductPayroll = async () => {
       <Hero data={heroData} />
       <TeustedLogos />
       <ProductItem data={productS1} />
-      <ProductItem data={productS2} />
+      {/* <ProductItem data={productS2} />
       <ProductItem data={productS3} />
-      <ProductItem data={productS4} />
+      <ProductItem data={productS4} /> */}
       <BestPlaceToWorkCaraousel />
       <DemoWithNewsletter />
     </div>
