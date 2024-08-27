@@ -38,14 +38,11 @@ const TabsWithInfo = ({ data: tabInfoData }) => {
       }
       items.push(dataItem);
     });
-    // console.log('items', items);
     return items;
   }
 
   const items = mapTabData()
 
-
-  // console.log('tabInfoData', tabInfoData.tabItem);
 
   return (
     <div className="container mx-auto pt-12 px-8 custom-tab">

@@ -9,7 +9,6 @@ const ScheduleDemo = ({ data: sheduleDemoData }) => {
   const [form] = Form.useForm();
 
 
-  // console.log('sheduleDemoData', sheduleDemoData);
   return (
     <div className="py-20 bg-[#CDE9FD] px-8 overflow-hidden">
       <div className="container">

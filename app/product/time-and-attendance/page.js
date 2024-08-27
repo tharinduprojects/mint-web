@@ -18,7 +18,6 @@ const TimeAndAttendance = async () => {
   const productS2 = data.data[5].attributes.blocks[2]
   const productS3 = data.data[5].attributes.blocks[3]
 
-  console.log('productS2', productS2);
   return (
     <div>
       <Hero data={heroData} />

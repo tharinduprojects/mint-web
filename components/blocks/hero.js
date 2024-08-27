@@ -6,6 +6,7 @@ import Image from "next/image";
 import { API_BASE_URL } from "../utils/constants";
 
 const Hero = ({ data: heroData }) => {
+
   const [form] = Form.useForm();
   const baseUrl = process.env.BASE_URL
   const heroImage = heroData.image.data.attributes.url
@@ -14,7 +15,6 @@ const Hero = ({ data: heroData }) => {
   const heroButton = heroData.cta
   const heroAuthor = heroData.author
   const heroBackDrop = heroData.backDrop.data.attributes.url
-
   return (
     <div className=" py-20 relative px-8 md:px-0" style={{ 'background': `${heroData.bgColor}` }}>
       <Image fill className="absolute hidden lg:block right-0 bottom-0 object-contain object-right" src={heroBackDrop} alt="" />

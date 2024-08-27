@@ -2,9 +2,6 @@
 
 const LeftImgAndInfo = ({ data: sectionData }) => {
 
-  // console.log('section data', sectionData);
-  // const baseUrl = process.env.BASE_URL || 'http://localhost:1337'
-
   return (
     <div style={{ 'background': `${sectionData.bgColor}` }} className="py-9 px-8 md:px-0">
       <div className="container">
