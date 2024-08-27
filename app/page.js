@@ -13,12 +13,12 @@ import ScheduleDemo from "@/components/blocks/sheduleDemo";
 import NewsletterSubscribe from "@/components/blocks/newsletterSubscribe";
 import DemoWithNewsletter from "@/components/common/demoWithNewsletter";
 import TeustedLogos from "@/components/common/trustedCompaniesLayout";
+import { API_BASE_URL } from "@/components/utils/constants";
 
 export default async function Home() {
-  const homeUrl = 'https://joyful-egg-6af1fd8511.strapiapp.com/api/landing-pages/?populate[metaData][populate]=*&populate[Blocks][populate][cta][populate]=*&populate[Blocks][populate][buttonLink][populate]=*&populate[Blocks][populate][logo][populate]=*&populate[Blocks][populate][tabItem][populate]=*&populate[Blocks][populate][sectionImage][populate]=*&populate[Blocks][populate][accordianItem][populate]=*&populate[Blocks][populate][image][populate]=*&populate[Blocks][populate][backgroundImage][populate]=*&populate[Blocks][populate][backDrop][populate]=*&populate[Blocks][populate][leftMedia][populate]=*&populate[Blocks][populate][sliderItem][populate]=*&populate[Blocks][populate][demoForm][populate]=*&populate[Blocks][populate][sectionBackdrop][populate]=*&populate[Blocks][populate][formButton][populate]=*'
+  const homeUrl = API_BASE_URL + '/api/landing-pages/?populate[metaData][populate]=*&populate[Blocks][populate][cta][populate]=*&populate[Blocks][populate][buttonLink][populate]=*&populate[Blocks][populate][logo][populate]=*&populate[Blocks][populate][tabItem][populate]=*&populate[Blocks][populate][sectionImage][populate]=*&populate[Blocks][populate][accordianItem][populate]=*&populate[Blocks][populate][image][populate]=*&populate[Blocks][populate][backgroundImage][populate]=*&populate[Blocks][populate][backDrop][populate]=*&populate[Blocks][populate][leftMedia][populate]=*&populate[Blocks][populate][sliderItem][populate]=*&populate[Blocks][populate][demoForm][populate]=*&populate[Blocks][populate][sectionBackdrop][populate]=*&populate[Blocks][populate][formButton][populate]=*'
 
   const data = await getData(homeUrl)
-  // console.log('FE data', data);
 
   const heroData = data.data[0].attributes.Blocks[0]
   const focusData = data.data[0].attributes.Blocks[2]

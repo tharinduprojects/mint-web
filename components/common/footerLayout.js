@@ -39,7 +39,7 @@ const FooterLayot = ({ data: footerData }) => {
             <ul className="list-none flex gap-3">
               {
                 footerData.data.attributes.mintFooter.socialMedia.map((item, i) => (
-                  <li><Image width={20} height={20} src={item.iconImage.data.attributes.url} alt="" /> </li>
+                  <li key={i}><Image width={20} height={20} src={item.iconImage.data.attributes.url} alt="" /> </li>
                 ))
               }
             </ul>

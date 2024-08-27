@@ -3,19 +3,22 @@ import Hero from "@/components/blocks/hero";
 import ProductItem from "@/components/blocks/productItem";
 import DemoWithNewsletter from "@/components/common/demoWithNewsletter";
 import TeustedLogos from "@/components/common/trustedCompaniesLayout";
+import { API_BASE_URL } from "@/components/utils/constants";
 
 const KioskEmpowerment = async () => {
-  const productDashboardUrl = 'https://joyful-egg-6af1fd8511.strapiapp.com/api/products/?populate[blocks][populate][0]=backDrop,image,cta,feature,media,sectionImage'
 
-  const data = await getData(productDashboardUrl)
+  const kisoskEmpowermentData = API_BASE_URL + '/api/products/14?populate[blocks][populate][0]=backDrop,image,cta,feature,media,sectionImage,accordianItem,backdrop'
 
-  const heroData = data.data[4].attributes.blocks[0]
-  const productS1 = data.data[4].attributes.blocks[1]
-  const productS2 = data.data[4].attributes.blocks[2]
-  const productS3 = data.data[4].attributes.blocks[3]
-  const productS4 = data.data[4].attributes.blocks[4]
-  const productS5 = data.data[4].attributes.blocks[5]
-  const productS6 = data.data[4].attributes.blocks[6]
+
+  const data = await getData(kisoskEmpowermentData)
+
+  const heroData = data.data.attributes.blocks[0]
+  const productS1 = data.data.attributes.blocks[1]
+  const productS2 = data.data.attributes.blocks[2]
+  const productS3 = data.data.attributes.blocks[3]
+  const productS4 = data.data.attributes.blocks[4]
+  const productS5 = data.data.attributes.blocks[5]
+  const productS6 = data.data.attributes.blocks[6]
 
 
   return (

@@ -6,7 +6,6 @@ import { API_BASE_URL } from "../utils/constants";
 const TrustedCompanies = ({ data: trustedData }) => {
 
   const baseUrl = process.env.BASE_URL
-  console.log('trustedData', trustedData);
   return (
     <div className="bg-bgLight py-20 px-3 md:px-0">
       <div className="container mx-auto">
