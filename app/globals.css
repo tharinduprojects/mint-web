@@ -62,3 +62,30 @@ body {
 .inline-form .ant-form-item {
   margin-bottom: 0;
 }
+
+/* menu accordian styling */
+
+#mobile-menu .ant-collapse-header-text {
+  font-size: 18px;
+  position: absolute;
+  left: 42px;
+  bottom: 9px;
+  color: white;
+}
+
+#mobile-menu .ant-collapse-expand-icon {
+  color: white;
+}
+
+#mobile-menu .ant-collapse {
+  border: none;
+  background: #726e6e2b;
+}
+
+#mobile-menu .ant-collapse-content-box {
+  background: #07243a;
+}
+
+#mobile-menu .ant-collapse-content {
+  border: none;
+}

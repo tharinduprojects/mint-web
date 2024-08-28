@@ -5,7 +5,7 @@ import { API_BASE_URL } from "../utils/constants";
 
 const MintHrmNumbers = ({ data: mintHrmNumbers }) => {
   return (
-    <div className="cursor-pointer" style={{ 'background': `${mintHrmNumbers.bgColor && mintHrmNumbers.bgColor}` }} className="py-20 relative md:min-h-[560px]">
+    <div style={{ 'background': `${mintHrmNumbers.bgColor && mintHrmNumbers.bgColor}` }} className="py-20 relative md:min-h-[560px]">
       {
         mintHrmNumbers.backDrop.data && <Image fill className="w-full h-full object-cover" src={mintHrmNumbers.backDrop.data.attributes.url} alt="" />
       }
@@ -20,7 +20,7 @@ const MintHrmNumbers = ({ data: mintHrmNumbers }) => {
             mintHrmNumbers?.mintNumbers?.map((item, i) => (
               <div key={i} className="pl-11">
                 <span className="text-lg font-normal text-[#6021DF]">{item.title}</span>
-                <p className="text-[80px] font-semibold">{item.number}</p>
+                <p className="text-[50px] md:text-[80px] font-semibold">{item.number}</p>
                 <span className="text-base- font-light">{item.description}</span>
               </div>
             ))
