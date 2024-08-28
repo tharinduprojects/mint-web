@@ -5,7 +5,7 @@ import { API_BASE_URL } from "../utils/constants";
 
 const MintHrmNumbers = ({ data: mintHrmNumbers }) => {
   return (
-    <div style={{ 'background': `${mintHrmNumbers.bgColor && mintHrmNumbers.bgColor}` }} className="py-20 relative md:min-h-[560px]">
+    <div className="cursor-pointer" style={{ 'background': `${mintHrmNumbers.bgColor && mintHrmNumbers.bgColor}` }} className="py-20 relative md:min-h-[560px]">
       {
         mintHrmNumbers.backDrop.data && <Image fill className="w-full h-full object-cover" src={mintHrmNumbers.backDrop.data.attributes.url} alt="" />
       }
