@@ -3,10 +3,13 @@
 import Link from "next/link";
 import Button from "../elements/button";
 import { useState, useEffect } from "react";
+import { Collapse } from "antd";
+import { MenuOutlined } from "@ant-design/icons";
 
 const NavBar = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [isMenuVisible, setIsMenuVisible] = useState(false);
+  const [isMobileMenuVisible, setIsMobileMenuVisible] = useState(false);
   let timeoutId;
 
   const cta = {
@@ -16,7 +19,7 @@ const NavBar = () => {
   };
 
   const handleMouseEnter = () => {
-    clearTimeout(timeoutId); // Clear any existing timeout
+    clearTimeout(timeoutId);
     setIsHovered(true);
     setIsMenuVisible(true);
   };
@@ -24,12 +27,17 @@ const NavBar = () => {
   const handleMouseLeave = () => {
     timeoutId = setTimeout(() => {
       setIsHovered(false);
-    }, 500); // Delay the fade-out effect
+    }, 500);
   };
 
   const handleLinkClick = () => {
     setIsHovered(false);
     setIsMenuVisible(false);
+    setIsMobileMenuVisible(false); // Hide the mobile menu when a link is clicked
+  };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuVisible((prev) => !prev);
   };
 
   useEffect(() => {
@@ -37,6 +45,23 @@ const NavBar = () => {
       setIsMenuVisible(false);
     }
   }, [isHovered]);
+
+  const items = [
+    {
+      key: '1',
+      label: 'Features',
+      children: <div>
+        <Link className="block py-2 text-base" href='/product/dashboard' onClick={handleLinkClick}> HR Dashboard</Link>
+        <Link className="block py-2 text-base" href='/product/absense-and-leave' onClick={handleLinkClick}> Absence & Leave</Link>
+        <Link className="block py-2 text-base" href='/product/time-and-attendance' onClick={handleLinkClick}> Time & Attendance</Link>
+        <Link className="block py-2 text-base" href='/product/employee-information' onClick={handleLinkClick}> Employee Information</Link>
+        <Link className="block py-2 text-base" href='/product/payroll' onClick={handleLinkClick}> Payroll</Link>
+        <Link className="block py-2 text-base" href='/product/recruitment' onClick={handleLinkClick}> Recruitment</Link>
+        <Link className="block py-2 text-base" href='/products/kanbanboard' onClick={handleLinkClick}> Kanban Board</Link>
+        <Link className="block py-2 text-base" href='/product/kiosk-empowerment' onClick={handleLinkClick}> Kiosk</Link>
+      </div>,
+    }
+  ];
 
   return (
     <>
@@ -77,6 +102,9 @@ const NavBar = () => {
                 EN
               </Link>
               <Button cta={cta} />
+              <span className="md:hidden text-white p-2" id="menu-btn" onClick={toggleMobileMenu}>
+                <MenuOutlined />
+              </span>
             </div>
           </div>
         </div>
@@ -206,6 +234,17 @@ const NavBar = () => {
           </div>
         </div>
       )}
+      {/* mobile menu */}
+      <div className={`md:hidden p-8 ${isMobileMenuVisible ? 'block' : 'hidden'}`} id="mobile-menu">
+        <div>
+          <Link className="block py-2 text-lg" href='/' onClick={handleLinkClick}>We Are</Link>
+          <Link className="block py-2 text-lg" href='/' onClick={handleLinkClick}>Why Mint</Link>
+          <Link className="block py-2 text-lg" href='/' onClick={handleLinkClick}>Careers</Link>
+          <div className="pt-5"></div>
+          <Collapse items={items} defaultActiveKey={['1']} />
+
+        </div>
+      </div>
     </>
   );
 };
