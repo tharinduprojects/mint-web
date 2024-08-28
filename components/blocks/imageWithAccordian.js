@@ -67,7 +67,8 @@ const ImageWithAccordian = ({ data: accordianData = {} }) => {
               <img src={accordianData.backDrop.data.attributes.url} alt="" className="absolute" />
             )}
           </div>
-          <div className="max-w-[580px]" style={accordianData.isRightMedia ? { paddingLeft: '50px' } : { paddingRight: '50px' }}>
+          {/* <div className="max-w-[580px]" style={accordianData.isRightMedia ? { paddingLeft: '50px' } : { paddingRight: '50px' }}> */}
+          <div className={`max-w-[580px] ${accordianData.isRightMedia ? 'md:pl-[50px]' : 'md:pr-[50px]'}`}>
             {accordianData.sectionTitle && (
               <h2
                 className="text-3xl md:text-5xl font-semibold mb-5 leading-[1.2]"
