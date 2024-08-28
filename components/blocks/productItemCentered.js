@@ -23,11 +23,11 @@ const ProductItemCentered = ({ data: productData = {} }) => {
       <div className='container'>
         <div className={`text-center relative ${!isFullWidth ? 'rounded-[20px] pb-14 pt-24' : ''} `}
           style={{ background: bgColor, flexDirection: leftMedia ? 'row-reverse' : 'row' }}>
-          <h2 className="text-6xl font-semibold max-w-[690px] mb-5 mx-auto"
+          <h2 className="text-3xl md:text-6xl font-semibold max-w-[690px] mb-5 mx-auto"
             style={textColor ? { color: textColor } : {}}>
             {heading}
           </h2>
-          <p className="text-xl font-normal max-w-[700px] mx-auto"
+          <p className="text-lg md:text-xl font-normal max-w-[700px] mx-auto"
             style={textColor ? { color: textColor } : {}}>
             {description}
           </p>
