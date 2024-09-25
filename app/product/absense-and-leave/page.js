@@ -9,7 +9,7 @@ import { API_BASE_URL } from "@/components/utils/constants";
 
 const ProductAbsenceAndLeave = async () => {
 
-  const ProductAbsenceAndLeave = API_BASE_URL + '/api/products/11?populate[blocks][populate][0]=backDrop,image,cta,feature,media,sectionImage,accordianItem,backdrop'
+  const ProductAbsenceAndLeave = API_BASE_URL + '/api/products/29?populate[blocks][populate][0]=backDrop,image,cta,feature,media,sectionImage,accordianItem,backdrop'
 
   const data = await getData(ProductAbsenceAndLeave)
 

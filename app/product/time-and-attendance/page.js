@@ -11,7 +11,7 @@ import { API_BASE_URL } from "@/components/utils/constants";
 const TimeAndAttendance = async () => {
 
 
-  const productTimeAndAttandance = API_BASE_URL + '/api/products/15?populate[blocks][populate][0]=backDrop,image,cta,feature,media,sectionImage,accordianItem,backdrop'
+  const productTimeAndAttandance = API_BASE_URL + '/api/products/33?populate[blocks][populate][0]=backDrop,image,cta,feature,media,sectionImage,accordianItem,backdrop'
 
   const data = await getData(productTimeAndAttandance)
 
