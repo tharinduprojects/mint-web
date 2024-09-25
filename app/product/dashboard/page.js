@@ -8,7 +8,7 @@ import { API_BASE_URL } from "@/components/utils/constants";
 const ProductDashboard = async () => {
 
   // const productDashboardUrl = 'https://joyful-egg-6af1fd8511.strapiapp.com/api/products/?populate[blocks][populate][0]=backDrop,image,cta,feature,media'
-  const productDashboardUrl = API_BASE_URL + '/api/products/10?populate[blocks][populate][0]=backDrop,image,cta,feature,media,sectionImage,accordianItem,backdrop'
+  const productDashboardUrl = API_BASE_URL + '/api/products/30?populate[blocks][populate][0]=backDrop,image,cta,feature,media,sectionImage,accordianItem,backdrop'
 
 
   const data = await getData(productDashboardUrl)

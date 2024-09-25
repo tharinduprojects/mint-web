@@ -5,11 +5,28 @@ import Button from "../elements/button";
 import { useState, useEffect } from "react";
 import { Collapse } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
+import { API_BASE_URL } from "../utils/constants";
+import getData from "../api/useFetch";
+import getNavItems from "../api/navItems";
 
 const NavBar = () => {
+
   const [isHovered, setIsHovered] = useState(false);
   const [isMenuVisible, setIsMenuVisible] = useState(false);
   const [isMobileMenuVisible, setIsMobileMenuVisible] = useState(false);
+  const [navItems, setnavItems] = useState([]);
+  const [isLoading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const fetchNavItems = async () => {
+      const data = await getNavItems()
+      setnavItems(data.data.attributes.nav)
+    }
+    fetchNavItems()
+  }, [isMenuVisible]);
+
+  const { Panel } = Collapse;
+
   let timeoutId;
 
   const cta = {
@@ -117,120 +134,23 @@ const NavBar = () => {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          <h3 className="pl-10">Features</h3>
-
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
-            <Link href='/product/dashboard' onClick={handleLinkClick} className="bg-white p-4 cursor-pointer hover:bg-slate-100">
-              <div className="flex items-center space-x-3">
-                <img
-                  src="https://joyful-egg-6af1fd8511.media.strapiapp.com/Icons_99ab10aa35.png"
-                  alt=""
-                />
-                <h3 className="text-lg font-semibold">HR Dashboard</h3>
-              </div>
-              <p className="text-gray-600 mt-2">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Turpis
-                enim interdum.
-              </p>
-            </Link>
-
-            <Link href='/product/absense-and-leave' onClick={handleLinkClick} className="bg-white p-4 cursor-pointer hover:bg-slate-100">
-              <div className="flex items-center space-x-3">
-                <img
-                  src="https://joyful-egg-6af1fd8511.media.strapiapp.com/2_9e9a4f63bf.png"
-                  alt=""
-                />
-                <h3 className="text-lg font-semibold">Absence & Leave</h3>
-              </div>
-              <p className="text-gray-600 mt-2">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Turpis
-                enim interdum.
-              </p>
-            </Link>
-
-            <Link href='/product/time-and-attendance' onClick={handleLinkClick} className="bg-white p-4 cursor-pointer hover:bg-slate-100">
-              <div className="flex items-center space-x-3">
-                <img
-                  src="https://joyful-egg-6af1fd8511.media.strapiapp.com/Icons_1_5b33d44877.png"
-                  alt=""
-                />
-                <h3 className="text-lg font-semibold">Time & Attendance</h3>
-              </div>
-              <p className="text-gray-600 mt-2">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Turpis
-                enim interdum.
-              </p>
-            </Link>
-
-            <Link href='/product/employee-information' onClick={handleLinkClick} className="bg-white p-4 cursor-pointer hover:bg-slate-100">
-              <div className="flex items-center space-x-3">
-                <img
-                  src="https://joyful-egg-6af1fd8511.media.strapiapp.com/2_1_0c4161e592.png"
-                  alt=""
-                />
-                <h3 className="text-lg font-semibold">Employee Information</h3>
-              </div>
-              <p className="text-gray-600 mt-2">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Turpis
-                enim interdum.
-              </p>
-            </Link>
-
-            <Link href='/product/payroll' onClick={handleLinkClick} className="bg-white p-4 cursor-pointer hover:bg-slate-100">
-              <div className="flex items-center space-x-3">
-                <img
-                  src="https://joyful-egg-6af1fd8511.media.strapiapp.com/2_2_64444d9ebe.png"
-                  alt=""
-                />
-                <h3 className="text-lg font-semibold">Payroll</h3>
-              </div>
-              <p className="text-gray-600 mt-2">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Turpis
-                enim interdum.
-              </p>
-            </Link>
-
-            <Link href='/product/recruitment' onClick={handleLinkClick} className="bg-white p-4 cursor-pointer hover:bg-slate-100">
-              <div className="flex items-center space-x-3">
-                <img
-                  src="https://joyful-egg-6af1fd8511.media.strapiapp.com/2_3_5697ec7687.png"
-                  alt=""
-                />
-                <h3 className="text-lg font-semibold">Recruitment</h3>
-              </div>
-              <p className="text-gray-600 mt-2">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Turpis
-                enim interdum.
-              </p>
-            </Link>
-
-            <Link href='/product/kanbanboard' onClick={handleLinkClick} className="bg-white p-4 cursor-pointer hover:bg-slate-100">
-              <div className="flex items-center space-x-3">
-                <img
-                  src="https://joyful-egg-6af1fd8511.media.strapiapp.com/Icons_2_ff60299e51.png"
-                  alt=""
-                />
-                <h3 className="text-lg font-semibold">Kanban Board</h3>
-              </div>
-              <p className="text-gray-600 mt-2">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Turpis
-                enim interdum.
-              </p>
-            </Link>
-
-            <Link href='/product/kiosk-empowerment' onClick={handleLinkClick} className="bg-white p-4 cursor-pointer hover:bg-slate-100">
-              <div className="flex items-center space-x-3">
-                <img
-                  src="https://joyful-egg-6af1fd8511.media.strapiapp.com/2_4_9cf484521d.png"
-                  alt=""
-                />
-                <h3 className="text-lg font-semibold">Kiosk</h3>
-              </div>
-              <p className="text-gray-600 mt-2">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Turpis
-                enim interdum.
-              </p>
-            </Link>
+            {
+              navItems && navItems.map((item) => (
+                <Link href={item.link} onClick={handleLinkClick} className="bg-white p-4 cursor-pointer hover:bg-slate-100">
+                  <div className="flex items-center space-x-3">
+                    <img
+                      src={item.icon.data.attributes.url}
+                      alt="icon"
+                    />
+                    <h3 className="text-lg font-semibold">{item.title}</h3>
+                  </div>
+                  <p className="text-gray-600 mt-2">
+                    {item.description}
+                  </p>
+                </Link>
+              ))
+            }
           </div>
         </div>
       )}
