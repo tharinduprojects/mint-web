@@ -5,7 +5,7 @@ import Button from "../elements/button";
 import Image from "next/image";
 import { API_BASE_URL } from "../utils/constants";
 
-const Hero = ({ data: heroData }) => {
+const Hero = ({ data: heroData, ctaAction }) => {
 
   const [form] = Form.useForm();
   const baseUrl = process.env.BASE_URL
@@ -14,10 +14,12 @@ const Hero = ({ data: heroData }) => {
   const heroDescription = heroData.description
   const heroButton = heroData.cta
   const heroAuthor = heroData.author
-  const heroBackDrop = heroData.backDrop.data.attributes.url
+  const heroBackDrop = heroData.backDrop?.data?.attributes?.url
   return (
     <div className=" py-20 relative px-8 md:px-0" style={{ 'background': `${heroData.bgColor}` }}>
-      <Image fill className="absolute hidden lg:block right-0 bottom-0 object-contain object-right" src={heroBackDrop} alt="" />
+      {
+        heroBackDrop && <Image fill className="absolute hidden lg:block right-0 bottom-0 object-contain object-right" src={heroBackDrop} alt="" />
+      }
       <div className="container mx-auto">
         <div className="grid md:grid-cols-2">
           <div className="flex flex-col justify-center relative">
@@ -38,7 +40,7 @@ const Hero = ({ data: heroData }) => {
                 </Form.Item>
               </Form>
               <div className="flex my-4">
-                <Button cta={heroButton} />
+                <Button cta={heroButton} ctaAction={ctaAction} />
               </div>
             </div>
           </div>
