@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const Button = ({ cta, className }) => {
+const Button = ({ cta, className, ctaAction }) => {
   let btnSize;
 
   switch (cta.size) {
@@ -18,9 +18,16 @@ const Button = ({ cta, className }) => {
   }
 
   return (
-    <Link href={cta.link} className={`${className} ${btnSize} text-sm bg-btnPrimary rounded-full text-white`}>
-      {cta.title}
-    </Link>
+    <>
+      {ctaAction ? <button onClick={ctaAction}
+        className={`${className} ${btnSize} text-sm bg-btnPrimary rounded-full text-white`}
+      >
+        {cta.title}
+      </button > : <Link href={cta?.link} className={`${className} ${btnSize} text-sm bg-btnPrimary rounded-full text-white`}>
+        {cta.title}
+      </Link>
+      }
+    </>
   );
 };
 

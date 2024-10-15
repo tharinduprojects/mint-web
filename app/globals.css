@@ -89,3 +89,33 @@ body {
 #mobile-menu .ant-collapse-content {
   border: none;
 }
+
+/* Modal Styling */
+.ant-modal-title {
+  font-size: 30px !important;
+}
+
+/* contact form fields */
+
+.contact-popup input {
+  border: 1px solid #ccc;
+}
+
+.contact-popup .ant-select-selector {
+  border-radius: 50px;
+}
+
+.contact-popup .ant-select {
+  height: 44px;
+}
+
+.contact-popup textarea {
+  border-radius: 15px;
+  border: 1px solid #ccc;
+}
+
+.contact-popup .ant-btn {
+  width: 100%;
+  border-radius: 50px;
+  height: 48px;
+}

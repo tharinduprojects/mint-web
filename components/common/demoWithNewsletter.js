@@ -1,10 +1,11 @@
 import getData from "../api/useFetch";
 import NewsletterSubscribe from "../blocks/newsletterSubscribe";
 import ScheduleDemo from "../blocks/sheduleDemo";
+import { API_BASE_URL } from "../utils/constants";
 
 const DemoWithNewsletter = async () => {
 
-  const blockData = 'https://joyful-egg-6af1fd8511.strapiapp.com/api/demo-and-newsletter?populate[demo][populate][demoForm][populate]=formButton&populate[demo][populate][demoForm][populate]=formBackDrop&populate[newsLetter][populate]=formButton,sectionBackdrop'
+  const blockData = API_BASE_URL + '/api/demo-and-newsletter?populate[demo][populate][demoForm][populate]=formButton&populate[demo][populate][demoForm][populate]=formBackDrop&populate[newsLetter][populate]=formButton,sectionBackdrop'
 
   const data = await getData(blockData)
 
