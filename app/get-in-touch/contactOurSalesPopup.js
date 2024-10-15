@@ -1,7 +1,6 @@
 'use client'
 
 import { Modal, Form, Input, Button, Select, Checkbox } from "antd";
-import { useEffect, useState } from "react";
 
 const ContactOurSalesPopup = ({ isModalOpen, handleOk, handleCancel }) => {
 
@@ -9,7 +8,7 @@ const ContactOurSalesPopup = ({ isModalOpen, handleOk, handleCancel }) => {
   const { Option } = Select;
 
   return (
-    <Modal title="Contact our Sales team" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+    <Modal footer={null} title="Contact our Sales team" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
       <p>Tell us how we can help and a member of our team will be in touch soon.</p>
       <Form layout="vertical" className="mt-14 contact-popup">
         <Form.Item label="Full name" required tooltip="This is a required field">
@@ -47,9 +46,6 @@ const ContactOurSalesPopup = ({ isModalOpen, handleOk, handleCancel }) => {
         <Form.Item>
           <Button type="primary" htmlType="submit">
             Send message
-          </Button>
-          <Button style={{ marginLeft: '8px' }}>
-            Cancel
           </Button>
         </Form.Item>
       </Form>
