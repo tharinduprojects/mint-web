@@ -17,7 +17,6 @@ const TermsAndConditionsContent = ({ content }) => {
         return h2.textContent.toLowerCase();
       });
       setH2ContentArray(h2Array);
-      console.log(h2Array);
     }
   }, []);
 
@@ -29,7 +28,6 @@ const TermsAndConditionsContent = ({ content }) => {
 
       const scrollPercentage = (scrollTop / (documentHeight - windowHeight)) * 100;
 
-      console.log(`Scroll Percentage: ${scrollPercentage.toFixed(2)}%`);
       setScHeight(scrollPercentage.toFixed(2));
     };
 

@@ -154,3 +154,16 @@ html {
   margin-bottom: 20px;
   font-size: 14px;
 }
+
+
+
+@media screen and (min-width: 768px) {
+  .get-in-touch-hero {
+    overflow: hidden;
+  }
+
+  .get-in-touch-hero .hero-image {
+    max-height: 571px;
+    position: absolute;
+  }
+}

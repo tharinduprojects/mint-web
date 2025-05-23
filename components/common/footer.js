@@ -9,7 +9,7 @@ const Footer = async () => {
   const data = await getData(footerUrl)
 
   return (
-    <FooterLayot data={data} />
+    <FooterLayot data={footerUrl} />
   );
 }
 

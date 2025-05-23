@@ -11,7 +11,7 @@ import { API_BASE_URL } from "@/components/utils/constants";
 const Recruitment = async () => {
 
 
-  const recruitmentData = API_BASE_URL + '/api/products/35?populate[blocks][populate][0]=backDrop,image,cta,feature,media,sectionImage,accordianItem,backdrop'
+  const recruitmentData = API_BASE_URL + '/api/products/8?populate[blocks][populate][0]=backDrop,image,cta,feature,media,sectionImage,accordianItem,backdrop'
 
 
   const data = await getData(recruitmentData)

@@ -7,7 +7,7 @@ import { API_BASE_URL } from "@/components/utils/constants";
 
 const KioskEmpowerment = async () => {
 
-  const kisoskEmpowermentData = API_BASE_URL + '/api/products/36?populate[blocks][populate][0]=backDrop,image,cta,feature,media,sectionImage,accordianItem,backdrop'
+  const kisoskEmpowermentData = API_BASE_URL + '/api/products/9?populate[blocks][populate][0]=backDrop,image,cta,feature,media,sectionImage,accordianItem,backdrop'
 
 
   const data = await getData(kisoskEmpowermentData)

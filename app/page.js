@@ -20,6 +20,9 @@ export default async function Home() {
 
   const data = await getData(homeUrl)
 
+  console.log('data', data);
+  
+
   const heroData = data.data[0].attributes.Blocks[0]
   const focusData = data.data[0].attributes.Blocks[2]
   const workCtaData = data.data[0].attributes.Blocks[3]
