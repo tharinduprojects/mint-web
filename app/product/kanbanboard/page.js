@@ -11,7 +11,7 @@ const Kanbanboard = async () => {
 
   // const recruitmentData = 'https://joyful-egg-6af1fd8511.strapiapp.com/api/products/?populate[blocks][populate][0]=backDrop,image,cta,feature,media,sectionImage,accordianItem,backdrop'
 
-  const kanbanData = API_BASE_URL + '/api/products/5?populate[blocks][populate][0]=backDrop,image,cta,feature,media,sectionImage,accordianItem,backdrop'
+  const kanbanData = API_BASE_URL + '/api/products/14?populate[blocks][populate][0]=backDrop,image,cta,feature,media,sectionImage,accordianItem,backdrop'
 
 
   const data = await getData(kanbanData)

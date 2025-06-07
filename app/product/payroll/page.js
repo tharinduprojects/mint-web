@@ -9,7 +9,7 @@ import { API_BASE_URL } from "@/components/utils/constants";
 const ProductPayroll = async () => {
 
 
-  const payrollData = API_BASE_URL + '/api/products/7?populate[blocks][populate][0]=backDrop,image,cta,feature,media,sectionImage,accordianItem,backdrop'
+  const payrollData = API_BASE_URL + '/api/products/16?populate[blocks][populate][0]=backDrop,image,cta,feature,media,sectionImage,accordianItem,backdrop'
 
 
   const data = await getData(payrollData)

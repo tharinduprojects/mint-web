@@ -4,8 +4,7 @@ import { API_BASE_URL } from "@/components/utils/constants";
 import Image from "next/image";
 
 const TermsConditionsHero = ({ data }) => {
-  console.log('data TERMSSS', API_BASE_URL);
-  console.log('data IMG URLLLLL', data[0].attributes.heroImage.data.attributes.url);
+
   const heroBg = data[0].attributes.heroBgColor
   return (
     <div className={`bg-[${heroBg}]`}>
