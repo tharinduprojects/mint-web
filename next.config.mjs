@@ -3,11 +3,11 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        hostname: 'localhost',
-        port: '1337',
-      }
+        protocol: 'https',
+        hostname: 'deserving-kindness-f717134482.media.strapiapp.com',
+        pathname: '/**',
+      },
     ],
-    domains: ['joyful-egg-6af1fd8511.media.strapiapp.com'],
   },
 };
 

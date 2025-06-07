@@ -5,7 +5,7 @@ import Button from "../elements/button";
 import Image from "next/image";
 import { API_BASE_URL } from "../utils/constants";
 
-const Hero = ({ data: heroData, ctaAction }) => {
+const Hero = ({ data: heroData, ctaAction, heroClass }) => {
 
   const [form] = Form.useForm();
   const baseUrl = process.env.BASE_URL
@@ -16,7 +16,7 @@ const Hero = ({ data: heroData, ctaAction }) => {
   const heroAuthor = heroData.author
   const heroBackDrop = heroData.backDrop?.data?.attributes?.url
   return (
-    <div className=" py-20 relative px-8 md:px-0" style={{ 'background': `${heroData.bgColor}` }}>
+    <div className={`${heroClass ? heroClass : ''} py-20 relative px-8 md:px-0`} style={{ 'background': `${heroData.bgColor}` }} >
       {
         heroBackDrop && <Image fill className="absolute hidden lg:block right-0 bottom-0 object-contain object-right" src={heroBackDrop} alt="" />
       }
@@ -46,7 +46,7 @@ const Hero = ({ data: heroData, ctaAction }) => {
           </div>
           <div className="flex justify-end">
             {/* <img src={heroImage} alt="" className="max-w-[650px] relative" /> */}
-            <Image src={heroImage} width={300} height={300} style={{ objectFit: 'contain', width: '100%' }} className="max-w-[650px] relative" />
+            <Image src={heroImage} width={300} height={300} style={{ objectFit: 'contain', width: '100%' }} className="hero-image max-w-[650px] relative" />
           </div>
         </div>
 

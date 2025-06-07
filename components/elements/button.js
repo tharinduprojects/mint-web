@@ -3,7 +3,7 @@ import Link from "next/link";
 const Button = ({ cta, className, ctaAction }) => {
   let btnSize;
 
-  switch (cta.size) {
+  switch (cta?.size) {
     case 'sm':
       btnSize = 'px-5 py-3';
       break;
@@ -22,9 +22,9 @@ const Button = ({ cta, className, ctaAction }) => {
       {ctaAction ? <button onClick={ctaAction}
         className={`${className} ${btnSize} text-sm bg-btnPrimary rounded-full text-white`}
       >
-        {cta.title}
+        {cta?.title}
       </button > : <Link href={cta?.link} className={`${className} ${btnSize} text-sm bg-btnPrimary rounded-full text-white`}>
-        {cta.title}
+        {cta?.title}
       </Link>
       }
     </>

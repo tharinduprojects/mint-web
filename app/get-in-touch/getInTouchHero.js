@@ -21,7 +21,7 @@ const GetInTouchHero = ({ data }) => {
 
   return (
     <>
-      <Hero data={data} ctaAction={openContactModal} />
+      <Hero data={data} ctaAction={openContactModal} heroClass={'get-in-touch-hero'} />
       <ContactOurSalesPopup isModalOpen={isModalOpen} handleOk={handleOk} handleCancel={handleCancel} />
     </>
   );

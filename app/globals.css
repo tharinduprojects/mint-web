@@ -7,6 +7,10 @@ body {
   color: #073353;
 }
 
+html {
+  @apply scroll-smooth;
+}
+
 .ant-input {
   border-radius: 50px;
   border: none;
@@ -118,4 +122,48 @@ body {
   width: 100%;
   border-radius: 50px;
   height: 48px;
+}
+
+/* Terms and conditions */
+
+.terms-and-conditions h2 {
+  font-size: 18px;
+  color: #7133F4;
+  margin: 30px 0;
+}
+
+.terms-and-conditions ul {
+  list-style: disc;
+  margin-bottom: 20px;
+  padding-left: 15px;
+}
+
+.terms-and-conditions ol {
+  margin-bottom: 20px;
+  list-style: decimal;
+  padding-left: 18px;
+
+}
+
+.terms-and-conditions ol li {
+  margin-bottom: 18px;
+  font-size: 14px;
+}
+
+.terms-and-conditions ul li {
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+
+
+@media screen and (min-width: 768px) {
+  .get-in-touch-hero {
+    overflow: hidden;
+  }
+
+  .get-in-touch-hero .hero-image {
+    max-height: 571px;
+    position: absolute;
+  }
 }

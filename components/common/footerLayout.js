@@ -4,7 +4,7 @@ import Image from "next/image";
 import { API_BASE_URL } from "../utils/constants";
 
 const FooterLayot = ({ data: footerData }) => {
-
+  
   return (
     <div className="py-16 px-8 md:px-0 bg-[#DCF0FF]">
       <div className="container">

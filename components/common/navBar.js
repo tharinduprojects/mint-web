@@ -5,7 +5,7 @@ import Button from "../elements/button";
 import { useState, useEffect } from "react";
 import { Collapse } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
-import { API_BASE_URL } from "../utils/constants";
+import { API_BASE_URL, API_MEDIA_URL } from "../utils/constants";
 import getData from "../api/useFetch";
 import getNavItems from "../api/navItems";
 
@@ -20,7 +20,10 @@ const NavBar = () => {
   useEffect(() => {
     const fetchNavItems = async () => {
       const data = await getNavItems()
-      setnavItems(data.data.attributes.nav)
+
+      console.log('dadadadada Nav get data firm NavBar.js', data);
+      
+      setnavItems(data.data?.attributes?.nav)
     }
     fetchNavItems()
   }, [isMenuVisible]);
@@ -30,7 +33,7 @@ const NavBar = () => {
   let timeoutId;
 
   const cta = {
-    link: '/demo',
+    link: '/get-in-touch',
     title: 'Get in touch',
     size: 'sm',
   };
@@ -87,10 +90,10 @@ const NavBar = () => {
           <div className="flex justify-between">
             <div className="flex items-center gap-12">
               <Link href="/" className="text-white">
-                <img
-                  src="https://joyful-egg-6af1fd8511.media.strapiapp.com/Logo_63c267b672.svg"
+                {/* <img
+                  src={`${API_MEDIA_URL}/Logo_63c267b672.svg`}
                   alt=""
-                />
+                /> */}
               </Link>
               <div className="text-white hidden md:block">
                 <ul className="text-sm flex gap-8">
@@ -106,7 +109,7 @@ const NavBar = () => {
                     <Link href="/we-are">We Are</Link>
                   </li>
                   <li className="pt-1 hover:text-blue-300">
-                    <Link href="#">Why Mint</Link>
+                    <Link href="/why-mint">Why Mint</Link>
                   </li>
                   <li className="pt-1 hover:text-blue-300">
                     <Link href="#">Careers</Link>
@@ -137,10 +140,10 @@ const NavBar = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
             {
               navItems && navItems.map((item) => (
-                <Link href={item.link} onClick={handleLinkClick} className="bg-white p-4 cursor-pointer hover:bg-slate-100">
+                <Link key={item.id} href={item.link} onClick={handleLinkClick} className="bg-white p-4 cursor-pointer hover:bg-slate-100">
                   <div className="flex items-center space-x-3">
                     <img
-                      src={item.icon.data.attributes.url}
+                      src={item.icon.data?.attributes?.url}
                       alt="icon"
                     />
                     <h3 className="text-lg font-semibold">{item.title}</h3>

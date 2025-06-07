@@ -1,10 +1,10 @@
-import { API_BASE_URL } from "../utils/constants";
 import getData from "./useFetch";
+import axios from "axios";
 
 const getNavItems = async () => {
-  const url = API_BASE_URL + '/api/navigation-menu?populate[nav][populate]=*'
-  const data = await getData(url)
-  return data;
-}
+  const url = process.env.NEXT_PUBLIC_BASE_URL + "/api/navigation-menu?populate[nav][populate]=*";
+  const data = await axios.get(url);
+  return data.data;
+};
 
 export default getNavItems;

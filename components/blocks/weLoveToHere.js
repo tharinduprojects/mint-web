@@ -3,7 +3,7 @@
 const WeLikeToHere = ({ data }) => {
 
   return (
-    <div className="pt-24 pb-10 bg-[#CDE9FD]">
+    <div className="pt-24 pb-10 px-7 bg-[#CDE9FD]">
       <div className="container">
         <div className="mb-14">
           <h2 className="text-3xl md:text-5xl font-semibold text-center">{data.Title}</h2>
@@ -15,7 +15,7 @@ const WeLikeToHere = ({ data }) => {
               data.contactRow?.map((item, i) => (
                 <div>
                   <h4 className="mb-5">{item.title}</h4>
-                  <div className="grid grid-cols-4 gap-5 mb-14">
+                  <div className="grid md:grid-cols-4 gap-5 mb-14">
                     {
                       item.item.map((item, i) => (
                         <div key={i} className="bg-white p-10 rounded-lg">

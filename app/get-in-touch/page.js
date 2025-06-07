@@ -20,7 +20,6 @@ const GetInTouch = async () => {
 
   return (
     <div>
-      {/* <TestFetchData data={data} /> */}
       <GetInTouchHero data={heroData} />
       <WeLikeToHere data={weLikeToHereData} />
       <BestPlaceToWorkCaraousel />
