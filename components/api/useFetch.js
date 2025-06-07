@@ -8,6 +8,8 @@ const getData = async (url) => {
     
     return response.data;
   } catch (error) {
+    console.log('Path showwww', url);
+    
     console.error('Error fetching data:', error);
     throw error;
   }

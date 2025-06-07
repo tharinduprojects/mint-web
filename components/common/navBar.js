@@ -20,6 +20,9 @@ const NavBar = () => {
   useEffect(() => {
     const fetchNavItems = async () => {
       const data = await getNavItems()
+
+      console.log('dadadadada Nav get data firm NavBar.js', data);
+      
       setnavItems(data.data?.attributes?.nav)
     }
     fetchNavItems()
@@ -106,7 +109,7 @@ const NavBar = () => {
                     <Link href="/we-are">We Are</Link>
                   </li>
                   <li className="pt-1 hover:text-blue-300">
-                    <Link href="#">Why Mint</Link>
+                    <Link href="/why-mint">Why Mint</Link>
                   </li>
                   <li className="pt-1 hover:text-blue-300">
                     <Link href="#">Careers</Link>
