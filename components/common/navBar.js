@@ -90,10 +90,10 @@ const NavBar = () => {
           <div className="flex justify-between">
             <div className="flex items-center gap-12">
               <Link href="/" className="text-white">
-                {/* <img
-                  src={`${API_MEDIA_URL}/Logo_63c267b672.svg`}
+                <img
+                  src={'https://deserving-kindness-f717134482.media.strapiapp.com/Logo_63c267b672.svg'}
                   alt=""
-                /> */}
+                />
               </Link>
               <div className="text-white hidden md:block">
                 <ul className="text-sm flex gap-8">
