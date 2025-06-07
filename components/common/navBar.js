@@ -20,9 +20,6 @@ const NavBar = () => {
   useEffect(() => {
     const fetchNavItems = async () => {
       const data = await getNavItems()
-
-      console.log('dadadadada Nav get data firm NavBar.js', data);
-      
       setnavItems(data.data?.attributes?.nav)
     }
     fetchNavItems()
@@ -91,7 +88,7 @@ const NavBar = () => {
             <div className="flex items-center gap-12">
               <Link href="/" className="text-white">
                 <img
-                  src={'https://deserving-kindness-f717134482.media.strapiapp.com/Logo_63c267b672.svg'}
+                  src={'https://heroic-peace-ef54ee0180.media.strapiapp.com/Logo_63c267b672.svg'}
                   alt=""
                 />
               </Link>

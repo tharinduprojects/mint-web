@@ -4,7 +4,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'deserving-kindness-f717134482.media.strapiapp.com',
+        hostname: 'heroic-peace-ef54ee0180.media.strapiapp.com',
         pathname: '/**',
       },
     ],

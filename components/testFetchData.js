@@ -1,6 +1,5 @@
 'use client'
 const TestFetchData = ({ data }) => {
-  console.log('data', data);
 
   return (
     <div>
