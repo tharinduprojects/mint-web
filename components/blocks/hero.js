@@ -9,12 +9,12 @@ const Hero = ({ data: heroData, ctaAction, heroClass }) => {
 
   const [form] = Form.useForm();
   const baseUrl = process.env.BASE_URL
-  const heroImage = heroData.image.data.attributes.url
-  const heroTitle = heroData.heading
-  const heroDescription = heroData.description
-  const heroButton = heroData.cta
-  const heroAuthor = heroData.author
-  const heroBackDrop = heroData.backDrop?.data?.attributes?.url
+  const heroImage = heroData?.image?.data?.attributes?.url
+  const heroTitle = heroData?.heading
+  const heroDescription = heroData?.description
+  const heroButton = heroData?.cta
+  const heroAuthor = heroData?.author
+  const heroBackDrop = heroData?.backDrop?.data?.attributes?.url
   return (
     <div className={`${heroClass ? heroClass : ''} py-20 relative px-8 md:px-0`} style={{ 'background': `${heroData.bgColor}` }} >
       {
