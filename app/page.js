@@ -15,18 +15,22 @@ import DemoWithNewsletter from "@/components/common/demoWithNewsletter";
 import TeustedLogos from "@/components/common/trustedCompaniesLayout";
 import { API_BASE_URL } from "@/components/utils/constants";
 
+export const dynamic = 'force-dynamic';
+
 export default async function Home() {
-  const homeUrl = API_BASE_URL + '/api/landing-pages/?populate[metaData][populate]=*&populate[Blocks][populate][cta][populate]=*&populate[Blocks][populate][buttonLink][populate]=*&populate[Blocks][populate][logo][populate]=*&populate[Blocks][populate][tabItem][populate]=*&populate[Blocks][populate][sectionImage][populate]=*&populate[Blocks][populate][accordianItem][populate]=*&populate[Blocks][populate][image][populate]=*&populate[Blocks][populate][backgroundImage][populate]=*&populate[Blocks][populate][backDrop][populate]=*&populate[Blocks][populate][leftMedia][populate]=*&populate[Blocks][populate][sliderItem][populate]=*&populate[Blocks][populate][demoForm][populate]=*&populate[Blocks][populate][sectionBackdrop][populate]=*&populate[Blocks][populate][formButton][populate]=*'
+  const homeUrl =
+    API_BASE_URL +
+    '/api/landing-pages/?populate[metaData][populate]=*&populate[Blocks][populate][cta][populate]=*&populate[Blocks][populate][buttonLink][populate]=*&populate[Blocks][populate][logo][populate]=*&populate[Blocks][populate][tabItem][populate]=*&populate[Blocks][populate][sectionImage][populate]=*&populate[Blocks][populate][accordianItem][populate]=*&populate[Blocks][populate][image][populate]=*&populate[Blocks][populate][backgroundImage][populate]=*&populate[Blocks][populate][backDrop][populate]=*&populate[Blocks][populate][leftMedia][populate]=*&populate[Blocks][populate][sliderItem][populate]=*&populate[Blocks][populate][demoForm][populate]=*&populate[Blocks][populate][sectionBackdrop][populate]=*&populate[Blocks][populate][formButton][populate]=*';
 
-  const data = await getData(homeUrl)
+  const data = await getData(homeUrl);
 
-  const heroData = data.data[0].attributes.Blocks[0]
-  const focusData = data.data[0].attributes.Blocks[2]
-  const workCtaData = data.data[0].attributes.Blocks[3]
-  const tabInfoData = data.data[0].attributes.Blocks[4]
-  const workTogetherdata = data.data[0].attributes.Blocks[5]
-  const transformData = data.data[0].attributes.Blocks[6]
-  const bestPlaceData = data.data[0].attributes.Blocks[7]
+  const heroData = data.data[0].attributes.Blocks[0];
+  const focusData = data.data[0].attributes.Blocks[2];
+  const workCtaData = data.data[0].attributes.Blocks[3];
+  const tabInfoData = data.data[0].attributes.Blocks[4];
+  const workTogetherdata = data.data[0].attributes.Blocks[5];
+  const transformData = data.data[0].attributes.Blocks[6];
+  const bestPlaceData = data.data[0].attributes.Blocks[7];
 
   return (
     <main>
